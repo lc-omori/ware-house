@@ -30,11 +30,26 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        use: ['vue-loader'],
+        use: [
+          {
+            loader: 'vue-loader',
+            options: {
+              cssModules: {
+                // localIdentName: '[path][name]---[local]',
+                localIdentName: '[name]',
+                camelCase: true,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(scss|css)$/,
-        use: ['vue-style-loader', 'css-loader', 'sass-loader'],
+        use: [
+          'vue-style-loader',
+          { loader: 'css-loader', options: { modules: false } },
+          'sass-loader',
+        ],
       },
     ],
   },

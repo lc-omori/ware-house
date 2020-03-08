@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    "@vue/typescript",
     'plugin:vue/recommended',
     'plugin:prettier/recommended',
   ],
@@ -14,12 +15,14 @@ module.exports = {
   rules: {
     'import/no-unresolved': 0,
     'import/extensions': 0,
+    'lines-between-class-members': 0,
     'prettier/prettier': [
       'error',
       {
         'printWidth': 100,
         'singleQuote': true,
-        'trailingComma': true,
+        'trailingComma': true,  
+        'semi': true,
       },
     ],
   },

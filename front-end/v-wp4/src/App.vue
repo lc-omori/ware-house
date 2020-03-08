@@ -1,8 +1,12 @@
 <template>
- <div>
-   <router-view />
- </div>
+  <div>
+    <router-view />
+  </div>
 </template>
 <script>
-export default {};
+import Vue from 'vue';
+import Component from 'vue-class-component';
+
+@Component
+export default class App extends Vue {}
 </script>
